@@ -1,15 +1,15 @@
 Materiały do wpisu: 
 
 ## Srodowisko
-
+```
 sudo docker-compose up -d
-
+```
 ## CURL
-
+```
 $ (echo -n '{"filename":"U2.docx", "data": "'; base64 ./U2.docx; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://192.168.114.128:9200/songs/_doc/1?pipeline=attachment
-
+```
 ## Kibana Dev Tool
-
+```
 PUT _ingest/pipeline/attachment
 {
   "description" : "What did you hide in this file? (¬‿¬)",
@@ -21,10 +21,11 @@ PUT _ingest/pipeline/attachment
     }
   ]
 }
-
-
+```
+```
 GET /songs/_doc/1
-
+```
+```
 POST /songs/_search
 {
   "query":{
@@ -33,7 +34,8 @@ POST /songs/_search
     }
   }
 }
-
+```
+```
 POST /songs/_search
 {
   "query": {
@@ -43,9 +45,11 @@ POST /songs/_search
     }
   }
 }
-
+```
+```
 DELETE /songs
-
+```
+```
 PUT /songs
 {
   "mappings": {
@@ -57,7 +61,8 @@ PUT /songs
     }
   }
 }
-
+```
+```
 PUT _ingest/pipeline/better_attachment
 {
   "description" : "What did you hide in this file? better version (¬‿¬)",
@@ -72,7 +77,8 @@ PUT _ingest/pipeline/better_attachment
     }
   ]
 }
-
+```
+```
 PUT _ingest/pipeline/even_better_attachment
 {
   "description" : "What did you hide in this file? even better version (¬‿¬)",
@@ -90,4 +96,4 @@ PUT _ingest/pipeline/even_better_attachment
     }
   ]
 }
-
+```
