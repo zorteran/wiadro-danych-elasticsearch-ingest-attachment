@@ -1,13 +1,13 @@
 Materiały do wpisu: 
 
 ## Srodowisko
-
+```
 sudo docker-compose up -d
-
+```
 ## CURL
-
+```
 $ (echo -n '{"filename":"U2.docx", "data": "'; base64 ./U2.docx; echo '"}') | curl -H "Content-Type: application/json" -d @-  http://192.168.114.128:9200/songs/_doc/1?pipeline=attachment
-
+```
 ## Kibana Dev Tool
 ```
 PUT _ingest/pipeline/attachment
